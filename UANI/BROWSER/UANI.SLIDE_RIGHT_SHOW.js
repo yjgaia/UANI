@@ -22,7 +22,7 @@ UANI.SLIDE_RIGHT_SHOW = METHOD({
 		marginLeft = dom.getStyle('marginLeft'),
 
 		// params
-		params = COPY_DATA(params);
+		params = COPY(params);
 
 		if (width === 0) {
 			width = UANI.SLIDE_RIGHT_HIDE.getSavedWidths()[dom.id];

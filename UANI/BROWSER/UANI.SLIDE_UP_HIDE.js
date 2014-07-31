@@ -32,7 +32,7 @@ UANI.SLIDE_UP_HIDE = METHOD(function(m) {'use strict';
 			originHeight = dom.getHeight(),
 
 			// params
-			params = COPY_DATA(params);
+			params = COPY(params);
 
 			savedHeights[dom.id] = originHeight;
 

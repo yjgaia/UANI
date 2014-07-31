@@ -35,7 +35,7 @@ UANI.SLIDE_LEFT_SHOW = METHOD(function(m) {'use strict';
 			marginLeft = dom.getStyle('marginLeft'),
 
 			// params
-			params = COPY_DATA(params);
+			params = COPY(params);
 
 			if (width === 0) {
 				width = UANI.SLIDE_LEFT_HIDE.getSavedWidths()[dom.id];

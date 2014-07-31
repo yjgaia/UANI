@@ -42,7 +42,7 @@ UANI.SLIDE_LEFT_HIDE = METHOD(function(m) {'use strict';
 			originMarginLeft = dom.getStyle('marginLeft'),
 
 			// params
-			params = COPY_DATA(params);
+			params = COPY(params);
 
 			marginLeft = UANI.SLIDE_LEFT_SHOW.getSavedMarginLefts()[dom.id];
 

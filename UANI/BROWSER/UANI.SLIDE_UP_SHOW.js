@@ -19,7 +19,7 @@ UANI.SLIDE_UP_SHOW = METHOD({
 		height = dom.getHeight(),
 
 		// params
-		params = COPY_DATA(params);
+		params = COPY(params);
 
 		if (height === 0) {
 			height = UANI.SLIDE_UP_HIDE.getSavedHeights()[dom.id];

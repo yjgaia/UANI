@@ -13,7 +13,7 @@ UANI.FADE_OUT = METHOD({
 
 		var
 		// params
-		params = COPY_DATA(params);
+		params = COPY(params);
 
 		params.keyframes = KEYFRAMES({
 			from : {
