@@ -1,4 +1,5 @@
-UANI.SLIDE_LEFT_SHOW = METHOD(function(m) {'use strict';
+UANI.SLIDE_LEFT_SHOW = METHOD(function(m) {
+	'use strict';
 
 	var
 	// saved margin lefts
@@ -25,23 +26,23 @@ UANI.SLIDE_LEFT_SHOW = METHOD(function(m) {'use strict';
 			//OPTIONAL: callback
 
 			var
-			// dom
-			dom = params.node.getDom(),
+			// node
+			node = params.node,
 
 			// width
-			width = dom.getWidth(),
+			width = node.getWidth(),
 
 			// margin left
-			marginLeft = dom.getStyle('marginLeft'),
+			marginLeft = node.getStyle('marginLeft'),
 
 			// params
 			params = COPY(params);
 
 			if (width === 0) {
-				width = UANI.SLIDE_LEFT_HIDE.getSavedWidths()[dom.id];
+				width = UANI.SLIDE_LEFT_HIDE.getSavedWidths()[node.id];
 			}
 
-			savedMarginLefts[dom.id] = marginLeft;
+			savedMarginLefts[node.id] = marginLeft;
 
 			params.keyframes = KEYFRAMES({
 				from : {
@@ -51,7 +52,7 @@ UANI.SLIDE_LEFT_SHOW = METHOD(function(m) {'use strict';
 				},
 				to : {
 					marginLeft : 0,
-					overflow : dom.getStyle('overflow')
+					overflow : node.getStyle('overflow')
 				}
 			});
 

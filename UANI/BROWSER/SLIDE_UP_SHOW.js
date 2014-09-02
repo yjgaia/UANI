@@ -1,6 +1,7 @@
-UANI.SLIDE_DOWN_SHOW = METHOD({
+UANI.SLIDE_UP_SHOW = METHOD({
 
-	run : function(params, callback) {'use strict';
+	run : function(params, callback) {
+		'use strict';
 		//REQUIRED: params
 		//REQUIRED: params.node
 		//OPTIONAL: params.duration
@@ -12,27 +13,29 @@ UANI.SLIDE_DOWN_SHOW = METHOD({
 		//OPTIONAL: callback
 
 		var
-		// dom
-		dom = params.node.getDom(),
+		// node
+		node = params.node,
 
 		// height
-		height = dom.getHeight(),
+		height = node.getHeight(),
 
 		// params
 		params = COPY(params);
 
 		if (height === 0) {
-			height = UANI.SLIDE_DOWN_HIDE.getSavedHeights()[dom.id];
+			height = UANI.SLIDE_UP_HIDE.getSavedHeights()[node.id];
 		}
 
 		params.keyframes = KEYFRAMES({
 			from : {
+				marginTop : height,
 				height : 0,
 				overflow : 'hidden'
 			},
 			to : {
+				marginTop : 0,
 				height : height,
-				overflow : dom.getStyle('overflow')
+				overflow : node.getStyle('overflow')
 			}
 		});
 

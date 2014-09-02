@@ -25,21 +25,21 @@ UANI.SLIDE_DOWN_HIDE = METHOD(function(m) {'use strict';
 			//OPTIONAL: callback
 
 			var
-			// dom
-			dom = params.node.getDom(),
+			// node
+			node = params.node,
 
 			// origin height
-			originHeight = dom.getHeight(),
+			originHeight = node.getHeight(),
 
 			// params
 			params = COPY(params);
 
-			savedHeights[dom.id] = originHeight;
+			savedHeights[node.id] = originHeight;
 
 			params.keyframes = KEYFRAMES({
 				from : {
 					height : originHeight,
-					overflow : dom.getStyle('overflow')
+					overflow : node.getStyle('overflow')
 				},
 				to : {
 					height : 0,

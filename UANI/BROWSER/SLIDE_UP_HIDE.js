@@ -1,4 +1,5 @@
-UANI.SLIDE_UP_HIDE = METHOD(function(m) {'use strict';
+UANI.SLIDE_UP_HIDE = METHOD(function(m) {
+	'use strict';
 
 	var
 	// saved heights
@@ -25,22 +26,22 @@ UANI.SLIDE_UP_HIDE = METHOD(function(m) {'use strict';
 			//OPTIONAL: callback
 
 			var
-			// dom
-			dom = params.node.getDom(),
+			// node
+			node = params.node,
 
 			// origin height
-			originHeight = dom.getHeight(),
+			originHeight = node.getHeight(),
 
 			// params
 			params = COPY(params);
 
-			savedHeights[dom.id] = originHeight;
+			savedHeights[node.id] = originHeight;
 
 			params.keyframes = KEYFRAMES({
 				from : {
 					marginTop : 0,
 					height : originHeight,
-					overflow : dom.getStyle('overflow')
+					overflow : node.getStyle('overflow')
 				},
 				to : {
 					marginTop : originHeight,

@@ -1,4 +1,5 @@
-UANI.SLIDE_RIGHT_HIDE = METHOD(function(m) {'use strict';
+UANI.SLIDE_RIGHT_HIDE = METHOD(function(m) {
+	'use strict';
 
 	var
 	// saved widths
@@ -26,28 +27,28 @@ UANI.SLIDE_RIGHT_HIDE = METHOD(function(m) {'use strict';
 			//OPTIONAL: callback
 
 			var
-			// dom
-			dom = params.node.getDom(),
+			// node
+			node = params.node,
 
 			// width
 			width = params.width,
 
 			// origin width
-			originWidth = dom.getWidth(),
+			originWidth = node.getWidth(),
 
 			// origin margin left
-			originMarginLeft = dom.getStyle('marginLeft'),
+			originMarginLeft = node.getStyle('marginLeft'),
 
 			// params
 			params = COPY(params);
 
-			savedWidths[dom.id] = originWidth;
+			savedWidths[node.id] = originWidth;
 
 			params.keyframes = KEYFRAMES({
 				from : {
 					width : originWidth,
 					marginLeft : originMarginLeft === undefined ? 0 : originMarginLeft,
-					overflow : dom.getStyle('overflow')
+					overflow : node.getStyle('overflow')
 				},
 				to : {
 					marginLeft : width === undefined ? originWidth : width,

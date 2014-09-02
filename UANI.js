@@ -4,7 +4,8 @@ require('./UPPERCASE_ONE/BOOT.js');
 
 BOOT({
 	CONFIG : {
-		isDevMode : true
+		isDevMode : true,
+		webServerPort : 8882
 	},
 	BROWSER_CONFIG : {
 		MAIN : function(ONE) {
@@ -13,11 +14,14 @@ BOOT({
 				uris : [''],
 				target : CLASS({
 
-					preset : function() {'use strict';
+					preset : function() {
+						'use strict';
+
 						return VIEW;
 					},
 
-					init : function(inner, self) {'use strict';
+					init : function(inner, self) {
+						'use strict';
 
 						var
 						// wrapper

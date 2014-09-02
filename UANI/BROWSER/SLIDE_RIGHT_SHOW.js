@@ -1,6 +1,7 @@
-UANI.SLIDE_UP_SHOW = METHOD({
+UANI.SLIDE_RIGHT_SHOW = METHOD({
 
-	run : function(params, callback) {'use strict';
+	run : function(params, callback) {
+		'use strict';
 		//REQUIRED: params
 		//REQUIRED: params.node
 		//OPTIONAL: params.duration
@@ -12,29 +13,31 @@ UANI.SLIDE_UP_SHOW = METHOD({
 		//OPTIONAL: callback
 
 		var
-		// dom
-		dom = params.node.getDom(),
+		// node
+		node = params.node,
 
-		// height
-		height = dom.getHeight(),
+		// width
+		width = node.getWidth(),
+
+		// margin left
+		marginLeft = node.getStyle('marginLeft'),
 
 		// params
 		params = COPY(params);
 
-		if (height === 0) {
-			height = UANI.SLIDE_UP_HIDE.getSavedHeights()[dom.id];
+		if (width === 0) {
+			width = UANI.SLIDE_RIGHT_HIDE.getSavedWidths()[node.id];
 		}
 
 		params.keyframes = KEYFRAMES({
 			from : {
-				marginTop : height,
-				height : 0,
+				width : width,
+				marginLeft : marginLeft === undefined ? width : marginLeft,
 				overflow : 'hidden'
 			},
 			to : {
-				marginTop : 0,
-				height : height,
-				overflow : dom.getStyle('overflow')
+				marginLeft : 0,
+				overflow : node.getStyle('overflow')
 			}
 		});
 
