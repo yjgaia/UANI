@@ -29,7 +29,7 @@ UANI.SLIDE_DOWN_HIDE = METHOD(function(m) {'use strict';
 			node = params.node,
 
 			// origin height
-			originHeight = node.getHeight(),
+			originHeight = node.getInnerHeight(),
 
 			// params
 			params = COPY(params);

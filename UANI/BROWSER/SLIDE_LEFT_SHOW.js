@@ -30,7 +30,7 @@ UANI.SLIDE_LEFT_SHOW = METHOD(function(m) {
 			node = params.node,
 
 			// width
-			width = node.getWidth(),
+			width = node.getInnerWidth(),
 
 			// margin left
 			marginLeft = node.getStyle('marginLeft'),

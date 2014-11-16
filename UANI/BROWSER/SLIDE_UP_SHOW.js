@@ -17,7 +17,7 @@ UANI.SLIDE_UP_SHOW = METHOD({
 		node = params.node,
 
 		// height
-		height = node.getHeight(),
+		height = node.getInnerHeight(),
 
 		// params
 		params = COPY(params);

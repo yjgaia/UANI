@@ -17,7 +17,7 @@ UANI.SLIDE_RIGHT_SHOW = METHOD({
 		node = params.node,
 
 		// width
-		width = node.getWidth(),
+		width = node.getInnerWidth(),
 
 		// margin left
 		marginLeft = node.getStyle('marginLeft'),

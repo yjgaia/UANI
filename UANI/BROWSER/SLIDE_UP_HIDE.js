@@ -30,7 +30,7 @@ UANI.SLIDE_UP_HIDE = METHOD(function(m) {
 			node = params.node,
 
 			// origin height
-			originHeight = node.getHeight(),
+			originHeight = node.getInnerHeight(),
 
 			// params
 			params = COPY(params);

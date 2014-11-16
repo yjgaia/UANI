@@ -37,7 +37,7 @@ UANI.SLIDE_LEFT_HIDE = METHOD(function(m) {
 			marginLeft,
 
 			// origin width
-			originWidth = node.getWidth(),
+			originWidth = node.getInnerWidth(),
 
 			// origin margin left
 			originMarginLeft = node.getStyle('marginLeft'),
