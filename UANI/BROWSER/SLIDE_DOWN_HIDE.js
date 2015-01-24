@@ -4,11 +4,11 @@ UANI.SLIDE_DOWN_HIDE = METHOD(function(m) {'use strict';
 	// saved heights
 	savedHeights = {},
 
-	// get saved height.
-	getSavedHeight;
+	// get saved heights.
+	getSavedHeights;
 
-	m.getSavedHeight = getSavedHeight = function() {
-		return getSavedHeight;
+	m.getSavedHeights = getSavedHeights = function() {
+		return savedHeights;
 	};
 
 	return {
@@ -38,10 +38,12 @@ UANI.SLIDE_DOWN_HIDE = METHOD(function(m) {'use strict';
 
 			params.keyframes = KEYFRAMES({
 				from : {
+					marginTop : 0,
 					height : originHeight,
 					overflow : node.getStyle('overflow')
 				},
 				to : {
+					marginTop : originHeight,
 					height : 0,
 					overflow : 'hidden'
 				}

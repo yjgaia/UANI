@@ -37,6 +37,15 @@ UANI.SLIDE_DOWN_SHOW = METHOD({
 			}
 		});
 
-		ANIMATE(params, callback);
+		ANIMATE(params, function() {
+			
+			node.addStyle({
+				height : 'auto'
+			});
+			
+			if (callback !== undefined) {
+				callback();
+			}
+		});
 	}
 });

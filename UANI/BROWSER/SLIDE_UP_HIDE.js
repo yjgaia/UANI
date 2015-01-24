@@ -5,11 +5,11 @@ UANI.SLIDE_UP_HIDE = METHOD(function(m) {
 	// saved heights
 	savedHeights = {},
 
-	// get saved heights.
-	getSavedHeights;
+	// get saved height.
+	getSavedHeight;
 
-	m.getSavedHeights = getSavedHeights = function() {
-		return savedHeights;
+	m.getSavedHeight = getSavedHeight = function() {
+		return getSavedHeight;
 	};
 
 	return {
@@ -39,12 +39,10 @@ UANI.SLIDE_UP_HIDE = METHOD(function(m) {
 
 			params.keyframes = KEYFRAMES({
 				from : {
-					marginTop : 0,
 					height : originHeight,
 					overflow : node.getStyle('overflow')
 				},
 				to : {
-					marginTop : originHeight,
 					height : 0,
 					overflow : 'hidden'
 				}

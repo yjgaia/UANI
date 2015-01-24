@@ -33,9 +33,6 @@ UANI.SLIDE_LEFT_HIDE = METHOD(function(m) {
 			// width
 			width = params.width,
 
-			// margin left
-			marginLeft,
-
 			// origin width
 			originWidth = node.getInnerWidth(),
 
@@ -45,22 +42,16 @@ UANI.SLIDE_LEFT_HIDE = METHOD(function(m) {
 			// params
 			params = COPY(params);
 
-			marginLeft = UANI.SLIDE_LEFT_SHOW.getSavedMarginLefts()[node.id];
-
-			if (marginLeft === undefined) {
-				marginLeft = 0;
-			}
-
 			savedWidths[node.id] = originWidth;
 
 			params.keyframes = KEYFRAMES({
 				from : {
 					width : originWidth,
 					marginLeft : originMarginLeft === undefined ? 0 : originMarginLeft,
-					overflow : 'hidden'
+					overflow : node.getStyle('overflow')
 				},
 				to : {
-					marginLeft : -(width === undefined ? originWidth : width) - marginLeft,
+					marginLeft : width === undefined ? originWidth : width,
 					overflow : 'hidden'
 				}
 			});
