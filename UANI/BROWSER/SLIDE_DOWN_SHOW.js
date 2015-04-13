@@ -23,7 +23,7 @@ UANI.SLIDE_DOWN_SHOW = METHOD({
 		params = COPY(params);
 
 		if (height === 0) {
-			height = UANI.SLIDE_DOWN_HIDE.getSavedHeight()[node.id];
+			height = UANI.SLIDE_DOWN_HIDE.getSavedHeights()[node.id];
 		}
 
 		params.keyframes = KEYFRAMES({
