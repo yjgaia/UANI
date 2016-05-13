@@ -1,15 +1,15 @@
-UANI.SLIDE_RIGHT_HIDE = METHOD(function(m) {
+UANI.HIDE_SLIDE_UP = METHOD(function(m) {
 	'use strict';
 
 	var
-	// saved widths
-	savedWidths = {},
+	// saved heights
+	savedHeights = {},
 
-	// get saved widths.
-	getSavedWidths;
+	// get saved height.
+	getSavedHeight;
 
-	m.getSavedWidths = getSavedWidths = function() {
-		return savedWidths;
+	m.getSavedHeight = getSavedHeight = function() {
+		return getSavedHeight;
 	};
 
 	return {
@@ -17,7 +17,6 @@ UANI.SLIDE_RIGHT_HIDE = METHOD(function(m) {
 		run : function(params, callback) {
 			//REQUIRED: params
 			//REQUIRED: params.node
-			//OPTIONAL: params.width
 			//OPTIONAL: params.duration
 			//OPTIONAL: params.timingFunction
 			//OPTIONAL: params.delay
@@ -30,28 +29,21 @@ UANI.SLIDE_RIGHT_HIDE = METHOD(function(m) {
 			// node
 			node = params.node,
 
-			// width
-			width = params.width,
-
-			// origin width
-			originWidth = node.getInnerWidth(),
-
-			// origin margin left
-			originMarginLeft = node.getStyle('marginLeft'),
+			// origin height
+			originHeight = node.getInnerHeight(),
 
 			// params
 			params = COPY(params);
 
-			savedWidths[node.id] = originWidth;
+			savedHeights[node.id] = originHeight;
 
 			params.keyframes = KEYFRAMES({
 				from : {
-					width : originWidth,
-					marginLeft : originMarginLeft === undefined ? 0 : originMarginLeft,
+					height : originHeight,
 					overflow : node.getStyle('overflow')
 				},
 				to : {
-					marginLeft : width === undefined ? originWidth : width,
+					height : 0,
 					overflow : 'hidden'
 				}
 			});

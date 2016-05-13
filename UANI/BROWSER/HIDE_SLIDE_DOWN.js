@@ -1,4 +1,4 @@
-UANI.SLIDE_DOWN_HIDE = METHOD(function(m) {'use strict';
+UANI.HIDE_SLIDE_DOWN = METHOD(function(m) {'use strict';
 
 	var
 	// saved heights

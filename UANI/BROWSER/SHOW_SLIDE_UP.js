@@ -1,4 +1,4 @@
-UANI.SLIDE_DOWN_SHOW = METHOD({
+UANI.SHOW_SLIDE_UP = METHOD({
 
 	run : function(params, callback) {
 		'use strict';
@@ -23,15 +23,17 @@ UANI.SLIDE_DOWN_SHOW = METHOD({
 		params = COPY(params);
 
 		if (height === 0) {
-			height = UANI.SLIDE_DOWN_HIDE.getSavedHeights()[node.id];
+			height = UANI.HIDE_SLIDE_UP.getSavedHeights()[node.id];
 		}
 
 		params.keyframes = KEYFRAMES({
 			from : {
+				marginTop : height,
 				height : 0,
 				overflow : 'hidden'
 			},
 			to : {
+				marginTop : 0,
 				height : height,
 				overflow : node.getStyle('overflow')
 			}

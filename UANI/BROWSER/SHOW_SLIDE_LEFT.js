@@ -1,4 +1,4 @@
-UANI.SLIDE_LEFT_SHOW = METHOD(function(m) {
+UANI.SHOW_SLIDE_LEFT = METHOD(function(m) {
 	'use strict';
 
 	var
@@ -39,7 +39,7 @@ UANI.SLIDE_LEFT_SHOW = METHOD(function(m) {
 			params = COPY(params);
 
 			if (width === 0) {
-				width = UANI.SLIDE_LEFT_HIDE.getSavedWidths()[node.id];
+				width = UANI.HIDE_SLIDE_LEFT.getSavedWidths()[node.id];
 			}
 
 			savedMarginLefts[node.id] = marginLeft;

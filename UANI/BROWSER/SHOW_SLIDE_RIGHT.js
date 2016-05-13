@@ -1,4 +1,4 @@
-UANI.SLIDE_RIGHT_SHOW = METHOD({
+UANI.SHOW_SLIDE_RIGHT = METHOD({
 
 	run : function(params, callback) {
 		'use strict';
@@ -26,7 +26,7 @@ UANI.SLIDE_RIGHT_SHOW = METHOD({
 		params = COPY(params);
 
 		if (width === 0) {
-			width = UANI.SLIDE_RIGHT_HIDE.getSavedWidths()[node.id];
+			width = UANI.HIDE_SLIDE_RIGHT.getSavedWidths()[node.id];
 		}
 
 		params.keyframes = KEYFRAMES({
