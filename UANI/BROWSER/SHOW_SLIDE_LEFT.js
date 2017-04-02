@@ -24,7 +24,7 @@ UANI.SHOW_SLIDE_LEFT = METHOD((m) => {
 			let width = node.getInnerWidth();
 			let marginLeft = node.getStyle('marginLeft');
 
-			let params = COPY(params);
+			params = COPY(params);
 
 			if (width === 0) {
 				width = UANI.HIDE_SLIDE_LEFT.getSavedWidths()[node.id];

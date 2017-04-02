@@ -23,7 +23,7 @@ UANI.HIDE_SLIDE_UP = METHOD((m) => {
 
 			let originHeight = node.getInnerHeight();
 
-			let params = COPY(params);
+			params = COPY(params);
 
 			savedHeights[node.id] = originHeight;
 

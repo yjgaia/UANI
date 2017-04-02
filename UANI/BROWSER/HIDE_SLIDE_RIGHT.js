@@ -26,7 +26,7 @@ UANI.HIDE_SLIDE_RIGHT = METHOD((m) => {
 			let originWidth = node.getInnerWidth();
 			let originMarginLeft = node.getStyle('marginLeft');
 
-			let params = COPY(params);
+			params = COPY(params);
 
 			savedWidths[node.id] = originWidth;
 

@@ -11,7 +11,7 @@ UANI.FADE_IN = METHOD({
 		//OPTIONAL: params.playStateduration
 		//OPTIONAL: callback
 
-		let params = COPY(params);
+		params = COPY(params);
 
 		params.keyframes = KEYFRAMES({
 			from : {

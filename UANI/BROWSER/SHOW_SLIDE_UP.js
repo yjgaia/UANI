@@ -15,7 +15,7 @@ UANI.SHOW_SLIDE_UP = METHOD({
 		
 		let height = node.getInnerHeight();
 		
-		let params = COPY(params);
+		params = COPY(params);
 
 		if (height === 0) {
 			height = UANI.HIDE_SLIDE_UP.getSavedHeights()[node.id];
