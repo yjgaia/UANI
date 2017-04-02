@@ -1,19 +1,14 @@
-UANI.HIDE_SLIDE_DOWN = METHOD(function(m) {'use strict';
+UANI.HIDE_SLIDE_DOWN = METHOD((m) => {
+	
+	let savedHeights = {};
 
-	var
-	// saved heights
-	savedHeights = {},
-
-	// get saved heights.
-	getSavedHeights;
-
-	m.getSavedHeights = getSavedHeights = function() {
+	let getSavedHeights = m.getSavedHeights = () => {
 		return savedHeights;
 	};
 
 	return {
 
-		run : function(params, callback) {
+		run : (params, callback) => {
 			//REQUIRED: params
 			//REQUIRED: params.node
 			//OPTIONAL: params.duration
@@ -24,15 +19,11 @@ UANI.HIDE_SLIDE_DOWN = METHOD(function(m) {'use strict';
 			//OPTIONAL: params.playStateduration
 			//OPTIONAL: callback
 
-			var
-			// node
-			node = params.node,
+			let node = params.node;
 
-			// origin height
-			originHeight = node.getInnerHeight(),
+			let originHeight = node.getInnerHeight();
 
-			// params
-			params = COPY(params);
+			let params = COPY(params);
 
 			savedHeights[node.id] = originHeight;
 

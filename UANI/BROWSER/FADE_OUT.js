@@ -1,6 +1,6 @@
 UANI.FADE_OUT = METHOD({
 
-	run : function(params, callback) {'use strict';
+	run : (params, callback) => {
 		//REQUIRED: params
 		//REQUIRED: params.node
 		//OPTIONAL: params.duration
@@ -11,9 +11,7 @@ UANI.FADE_OUT = METHOD({
 		//OPTIONAL: params.playStateduration
 		//OPTIONAL: callback
 
-		var
-		// params
-		params = COPY(params);
+		let params = COPY(params);
 
 		params.keyframes = KEYFRAMES({
 			from : {

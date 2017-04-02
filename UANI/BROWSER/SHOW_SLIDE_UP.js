@@ -1,7 +1,6 @@
 UANI.SHOW_SLIDE_UP = METHOD({
 
-	run : function(params, callback) {
-		'use strict';
+	run : (params, callback) => {
 		//REQUIRED: params
 		//REQUIRED: params.node
 		//OPTIONAL: params.duration
@@ -12,15 +11,11 @@ UANI.SHOW_SLIDE_UP = METHOD({
 		//OPTIONAL: params.playStateduration
 		//OPTIONAL: callback
 
-		var
-		// node
-		node = params.node,
-
-		// height
-		height = node.getInnerHeight(),
-
-		// params
-		params = COPY(params);
+		let node = params.node;
+		
+		let height = node.getInnerHeight();
+		
+		let params = COPY(params);
 
 		if (height === 0) {
 			height = UANI.HIDE_SLIDE_UP.getSavedHeights()[node.id];
@@ -39,7 +34,7 @@ UANI.SHOW_SLIDE_UP = METHOD({
 			}
 		});
 
-		ANIMATE(params, function() {
+		ANIMATE(params, () => {
 			
 			node.addStyle({
 				height : 'auto'

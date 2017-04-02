@@ -1,20 +1,14 @@
-UANI.HIDE_SLIDE_RIGHT = METHOD(function(m) {
-	'use strict';
+UANI.HIDE_SLIDE_RIGHT = METHOD((m) => {
+	
+	let savedWidths = {};
 
-	var
-	// saved widths
-	savedWidths = {},
-
-	// get saved widths.
-	getSavedWidths;
-
-	m.getSavedWidths = getSavedWidths = function() {
+	let getSavedWidths = m.getSavedWidths = () => {
 		return savedWidths;
 	};
 
 	return {
 
-		run : function(params, callback) {
+		run : (params, callback) => {
 			//REQUIRED: params
 			//REQUIRED: params.node
 			//OPTIONAL: params.width
@@ -26,21 +20,13 @@ UANI.HIDE_SLIDE_RIGHT = METHOD(function(m) {
 			//OPTIONAL: params.playStateduration
 			//OPTIONAL: callback
 
-			var
-			// node
-			node = params.node,
+			let node = params.node;
+			let width = params.width;
 
-			// width
-			width = params.width,
+			let originWidth = node.getInnerWidth();
+			let originMarginLeft = node.getStyle('marginLeft');
 
-			// origin width
-			originWidth = node.getInnerWidth(),
-
-			// origin margin left
-			originMarginLeft = node.getStyle('marginLeft'),
-
-			// params
-			params = COPY(params);
+			let params = COPY(params);
 
 			savedWidths[node.id] = originWidth;
 

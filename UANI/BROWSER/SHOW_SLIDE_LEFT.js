@@ -1,20 +1,14 @@
-UANI.SHOW_SLIDE_LEFT = METHOD(function(m) {
-	'use strict';
+UANI.SHOW_SLIDE_LEFT = METHOD((m) => {
 
-	var
-	// saved margin lefts
-	savedMarginLefts = {},
+	let savedMarginLefts = {};
 
-	// get saved margin lefts.
-	getSavedMarginLefts;
-
-	m.getSavedMarginLefts = getSavedMarginLefts = function() {
+	let getSavedMarginLefts = m.getSavedMarginLefts = () => {
 		return savedMarginLefts;
 	};
 
 	return {
 
-		run : function(params, callback) {
+		run : (params, callback) => {
 			//REQUIRED: params
 			//REQUIRED: params.node
 			//OPTIONAL: params.duration
@@ -25,18 +19,12 @@ UANI.SHOW_SLIDE_LEFT = METHOD(function(m) {
 			//OPTIONAL: params.playStateduration
 			//OPTIONAL: callback
 
-			var
-			// node
-			node = params.node,
+			let node = params.node;
 
-			// width
-			width = node.getInnerWidth(),
+			let width = node.getInnerWidth();
+			let marginLeft = node.getStyle('marginLeft');
 
-			// margin left
-			marginLeft = node.getStyle('marginLeft'),
-
-			// params
-			params = COPY(params);
+			let params = COPY(params);
 
 			if (width === 0) {
 				width = UANI.HIDE_SLIDE_LEFT.getSavedWidths()[node.id];

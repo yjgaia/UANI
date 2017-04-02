@@ -1,7 +1,6 @@
 UANI.SHOW_SLIDE_RIGHT = METHOD({
 
-	run : function(params, callback) {
-		'use strict';
+	run : (params, callback) => {
 		//REQUIRED: params
 		//REQUIRED: params.node
 		//OPTIONAL: params.duration
@@ -12,18 +11,12 @@ UANI.SHOW_SLIDE_RIGHT = METHOD({
 		//OPTIONAL: params.playStateduration
 		//OPTIONAL: callback
 
-		var
-		// node
-		node = params.node,
-
-		// width
-		width = node.getInnerWidth(),
-
-		// margin left
-		marginLeft = node.getStyle('marginLeft'),
-
-		// params
-		params = COPY(params);
+		let node = params.node;
+		
+		let width = node.getInnerWidth();
+		let marginLeft = node.getStyle('marginLeft');
+		
+		let params = COPY(params);
 
 		if (width === 0) {
 			width = UANI.HIDE_SLIDE_RIGHT.getSavedWidths()[node.id];
