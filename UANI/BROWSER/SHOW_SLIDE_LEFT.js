@@ -1,3 +1,6 @@
+/*
+ * DOM이 오른쪽에서 왼쪽으로 나타나도록 슬라이드 애니메이션을 추가합니다.
+ */
 UANI.SHOW_SLIDE_LEFT = METHOD((m) => {
 
 	let savedMarginLefts = {};
@@ -32,7 +35,7 @@ UANI.SHOW_SLIDE_LEFT = METHOD((m) => {
 
 			savedMarginLefts[node.id] = marginLeft;
 
-			params.keyframes = KEYFRAMES({
+			params.keyframes = {
 				from : {
 					width : width,
 					marginLeft : marginLeft === undefined ? -width : marginLeft,
@@ -42,7 +45,7 @@ UANI.SHOW_SLIDE_LEFT = METHOD((m) => {
 					marginLeft : 0,
 					overflow : node.getStyle('overflow')
 				}
-			});
+			};
 
 			ANIMATE(params, callback);
 		}

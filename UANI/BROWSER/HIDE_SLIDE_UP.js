@@ -1,3 +1,6 @@
+/*
+ * DOM이 아래에서 위로 사라지도록 슬라이드 애니메이션을 추가합니다.
+ */
 UANI.HIDE_SLIDE_UP = METHOD((m) => {
 	
 	let savedHeights = {};
@@ -27,7 +30,7 @@ UANI.HIDE_SLIDE_UP = METHOD((m) => {
 
 			savedHeights[node.id] = originHeight;
 
-			params.keyframes = KEYFRAMES({
+			params.keyframes = {
 				from : {
 					height : originHeight,
 					overflow : node.getStyle('overflow')
@@ -36,7 +39,7 @@ UANI.HIDE_SLIDE_UP = METHOD((m) => {
 					height : 0,
 					overflow : 'hidden'
 				}
-			});
+			};
 
 			ANIMATE(params, callback);
 		}

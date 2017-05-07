@@ -1,3 +1,6 @@
+/*
+ * DOM이 페이드 아웃 효과와 함께 사라지도록 애니메이션을 추가합니다. 
+ */
 UANI.FADE_OUT = METHOD({
 
 	run : (params, callback) => {
@@ -13,14 +16,14 @@ UANI.FADE_OUT = METHOD({
 
 		params = COPY(params);
 
-		params.keyframes = KEYFRAMES({
+		params.keyframes = {
 			from : {
 				opacity : 1
 			},
 			to : {
 				opacity : 0
 			}
-		});
+		};
 
 		ANIMATE(params, callback);
 	}

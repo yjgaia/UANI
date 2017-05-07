@@ -1,3 +1,6 @@
+/*
+ * DOM이 위에서 아래로 나타나도록 슬라이드 애니메이션을 추가합니다.
+ */
 UANI.SHOW_SLIDE_DOWN = METHOD({
 
 	run : (params, callback) => {
@@ -21,7 +24,7 @@ UANI.SHOW_SLIDE_DOWN = METHOD({
 			height = UANI.HIDE_SLIDE_DOWN.getSavedHeights()[node.id];
 		}
 
-		params.keyframes = KEYFRAMES({
+		params.keyframes = {
 			from : {
 				height : 0,
 				overflow : 'hidden'
@@ -30,7 +33,7 @@ UANI.SHOW_SLIDE_DOWN = METHOD({
 				height : height,
 				overflow : node.getStyle('overflow')
 			}
-		});
+		};
 
 		ANIMATE(params, () => {
 			

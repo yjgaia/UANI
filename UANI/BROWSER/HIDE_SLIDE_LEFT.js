@@ -1,3 +1,6 @@
+/*
+ * DOM이 오른쪽에서 왼쪽으로 사라지도록 슬라이드 애니메이션을 추가합니다.
+ */
 UANI.HIDE_SLIDE_LEFT = METHOD((m) => {
 	
 	let savedWidths = {};
@@ -37,7 +40,7 @@ UANI.HIDE_SLIDE_LEFT = METHOD((m) => {
 
 			savedWidths[node.id] = originWidth;
 
-			params.keyframes = KEYFRAMES({
+			params.keyframes = {
 				from : {
 					width : originWidth,
 					marginLeft : originMarginLeft === undefined ? 0 : originMarginLeft,
@@ -47,7 +50,7 @@ UANI.HIDE_SLIDE_LEFT = METHOD((m) => {
 					marginLeft : -(width === undefined ? originWidth : width) - marginLeft,
 					overflow : 'hidden'
 				}
-			});
+			};
 
 			ANIMATE(params, callback);
 		}
