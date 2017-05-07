@@ -1,5 +1,5 @@
 # UANI
-UJS Animation BOX
+[UPPERCASE의 DOM](https://github.com/Hanul/UPPERCASE/blob/master/DOC/GUIDE/UPPERCASE-CORE-BROWSER.md#dom-객체-생성)에 애니메이션을 추가할 수 있도록 하는 BOX입니다.
 
 ## FADE_IN
 ## FADE_OUT
