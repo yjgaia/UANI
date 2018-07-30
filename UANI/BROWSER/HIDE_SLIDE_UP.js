@@ -5,8 +5,8 @@ UANI.HIDE_SLIDE_UP = METHOD((m) => {
 	
 	let savedHeights = {};
 
-	let getSavedHeight = m.getSavedHeight = () => {
-		return getSavedHeight;
+	let getSavedHeights = m.getSavedHeights = () => {
+		return savedHeights;
 	};
 
 	return {
